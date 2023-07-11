@@ -614,12 +614,104 @@ main {
   color: #999999;
 }
 
+.popup {
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  background-color: rgba(0,0,0,0.6);*/
+}
+
+.feedback {
+  box-sizing: border-box;
+  position: relative;
+  width: 390px;
+  margin: 13% auto 0 auto;
+  padding: 55px 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  z-index: 3;
+}
+
+.popup-close {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  z-index: 3;
+  width: 17px;
+  height: 17px;
+  background-image: url("../svg/form-x.svg");
+}
+
+.popup-label {
+  font-size: 13px;
+  margin-bottom: 13px;
+}
+
+#how-often {
+  height: 48px;
+  margin-bottom: 33px;
+  background-image: url("../svg/form-arrows.svg");
+  background-repeat: no-repeat;
+  background-size: 9px;
+  background-position: right 13px center;
+}
+
+.radio-container {
+  margin-bottom: 33px;
+  display: flex;
+  justify-content: baseline;
+}
+
+.radio-btn {
+  display: none;
+}
+
+.radio-text {
+  font-size: 13px;
+  margin-right: 16px;
+}
+
+.radio-text::before {
+    content: "";
+    display: inline-block;
+    margin-right: 5px;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    background-image: url("../svg/form-empty-circle.svg");
+    background-size: cover;
+ }
+
+.radio-btn:checked + .radio-text::before {
+    background-image: url("../svg/form-circle.svg");
+ }
+
+#text-area {
+  min-height: 130px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+ }
+
+#text-area::placeholder {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.feedback-send {
+  min-height: 49px;
+}
+
 @media (max-width: 768px) {
 
   .banner {
     margin-bottom: 50px;
     min-height: 390px;
     background-image: url(../img/banner-bg-tablet.jpg);
+    background-repeat: no-repeat;
+
   }
 
   .banner-container {
@@ -733,6 +825,7 @@ main {
   .product-title {
     margin-bottom: 10px;
   }
+
 }
 
 @media (max-width: 360px) {
@@ -857,6 +950,36 @@ main {
     margin-bottom: 50px;
   }
 
+  .feedback {
+    width: 330px;
+    margin: 15% auto 0 auto;
+    padding: 30px 25px;
+  }
+
 }
+
+@media screen and (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
+  .trends-container {
+    width: calc((100% - 12px) / 4);
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1200px) and (orientation: portrait) {
+  .trends-container {
+    width: calc((100% - 4px) / 2);
+  }
+}
+
+@media screen and (max-width: 640px) and (orientation: landscape) {
+  .trends-container {
+    width: calc((100% - 4px) / 2);
+  }
+}
+@media screen and (max-width: 640px) and (orientation: portrait) {
+ .trends-container {
+    width: 100%;
+  }
+}
+
 
 
